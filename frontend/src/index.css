@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16.5px; /* Scale up base rem unit slightly for better readability */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F9FAFB;
+}
+
+/* Global Font Size Polish */
+.text-xs {
+  font-size: 0.8rem !important; /* Increase from 0.75rem */
+}
+
+.text-sm {
+  font-size: 0.925rem !important; /* Increase from 0.875rem */
+}
+
+/* Make tables and details more spacious */
+table th, table td {
+  padding-top: 0.7rem !important;
+  padding-bottom: 0.7rem !important;
+}
+
+:root {
+  --red-deep: #7A1C1C;
+  --red-mid: #A02828;
+  --red-tint: #FDF2F2;
+  --red-border: #E8C8C8;
+  --ink: #1E1E1E;
+  --ink2: #4A4A4A;
+  --ink3: #7A7A7A;
+  --ink4: #AAAAAA;
+  --bg: #F3F4F6;
+  --s: #FFFFFF;
+  --s2: #F9FAFB;
+  --s3: #F3F4F6;
+  --b: #E5E7EB;
+  --b2: #D1D5DB;
+  --rose: #FDE8E8;
+  --rose-b: #E8C0C0;
+  --rose-t: #8B2020;
+  --amber: #FDF3E3;
+  --amber-b: #E8D4A0;
+  --amber-t: #7A5500;
+  --green: #E8F4ED;
+  --green-b: #A8D4B8;
+  --green-t: #1A5C32;
+  --blue: #E8EEF8;
+  --blue-b: #B8CCE8;
+  --blue-t: #1A3A6C;
+  --purple-l: #F5F0FF;
+  --purple-b: #C8B4E8;
+  --purple-t: #4A1A7A;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Inter', sans-serif;
+}
+
+/* ════ FILTERS ════ */
+.filters-bar{background:var(--s);border-bottom:1px solid var(--b);padding:12px 24px;position:sticky;top:0;z-index:30}
+.filters-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:8px}
+.filters-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+
+/* Searchable dropdown */
+.dd-wrap{position:relative;min-width:150px;max-width:220px;flex:1}
+.dd-trigger{width:100%;padding:8px 30px 8px 12px;font-family:var(--sans);font-size:13px;border:1.5px solid var(--b2);border-radius:7px;background:var(--s);color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none;position:relative;gap:6px}
+.dd-trigger.active-val{border-color:var(--red-mid);background:var(--red-tint);color:var(--red-deep);font-weight:500}
+.dd-flabel{font-size:10px;color:var(--ink3);position:absolute;top:-8px;left:10px;background:var(--s);padding:0 4px;font-weight:500;white-space:nowrap;z-index:2;}
+.dd-arrow{font-size:10px;color:var(--ink3);flex-shrink:0}
+.dd-val{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dd-menu{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--s);border:1.5px solid var(--b2);border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.12);z-index:300;overflow:hidden;min-width:200px}
+.dd-search{padding:8px 12px;border:none;border-bottom:1px solid var(--b);width:100%;font-family:var(--sans);font-size:12px;outline:none;background:var(--s2)}
+.dd-options{max-height:200px;overflow-y:auto}
+.dd-opt{padding:9px 14px;font-size:12px;cursor:pointer;color:var(--ink2)}
+.dd-opt:hover{background:var(--red-tint);color:var(--red-deep)}
+.dd-opt.selected{background:var(--red-tint);color:var(--red-deep);font-weight:600}
+.dd-group-label{padding:6px 14px 3px;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink4);background:var(--s3)}
+.btn-clear{padding:8px 14px;font-size:12px;border:1.5px solid var(--b2);border-radius:7px;background:var(--s);color:var(--ink2);cursor:pointer;white-space:nowrap;flex-shrink:0}
+.btn-clear:hover{border-color:var(--red-mid);color:var(--red-mid)}
+
+/* ════ OVERVIEW STRIP ════ */
+.overview-strip{background:var(--s2);border-bottom:1px solid var(--b);padding:7px 24px;display:flex;align-items:center;gap:6px;font-size:12px;font-family:var(--mono);color:var(--ink3);position:sticky;top:80px;z-index:20;flex-wrap:wrap}
+.ov-val{font-weight:600;color:var(--ink);font-size:13px}
+.ov-sep{color:var(--b2);margin:0 2px}
+.ov-q{margin-left:auto;padding:3px 10px;background:var(--blue);color:var(--blue-t);border:1px solid var(--blue-b);border-radius:4px;font-size:11px;font-weight:600}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
